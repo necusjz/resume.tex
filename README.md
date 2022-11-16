@@ -1,2 +1,2 @@
-# latex-resume
-Yet another resume template with LaTeX.
+# resume.tex
+Yet another LaTeX Résumé for software engineers.
