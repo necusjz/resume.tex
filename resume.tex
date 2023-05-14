@@ -1,0 +1,168 @@
+%--------------------------
+% Ethan Yang's LaTeX Résumé
+% Author: necusjz
+% License: MIT
+%--------------------------
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+\usepackage{tikz}
+\input{glyphtounicode}
+
+% font options
+\usepackage[sc]{mathpazo}
+\linespread{1.05}  % palladio needs more leading (space between lines)
+\usepackage[T1]{fontenc}
+
+\pagestyle{fancy}
+\fancyhf{}  % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\footskip}{5pt}
+
+% sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+% custom commands
+\newcommand{\cvitem}[1]{
+  \item\small{
+    {#1\vspace{-2pt}}
+  }
+}
+
+\newcommand{\cvheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\cvheadingstart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\cvheadingend}{\end{itemize}}
+\newcommand{\cvitemstart}{\begin{itemize}\justifying}
+\newcommand{\cvitemend}{\end{itemize}\vspace{-5pt}}
+
+\newcommand{\cvskill}[2]{
+  \textcolor{black}{\textbf{#1}}\hfill
+  \foreach \x in {1,...,5}{%
+    \space{\ifnumgreater{\x}{#2}{\color{black!80!white!20}}{\color{black}}\faSquare}}\par%
+  \vspace{-2pt}
+}
+
+\newcommand{\cvroman}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\footnotesize$\bullet$}}$}
+
+%--------------------------HEADING--------------------------
+\begin{document}
+
+\begin{center}
+  \textbf{\LARGE\scshape Ethan Yang} \\
+  \vspace{1pt}\small
+  \href{mailto:necusjz@gmail.com}{necusjz@gmail.com}
+  $\ \diamond\ $ 
+  (213) 432-1029
+  $\ \diamond\ $
+  \href{https://github.com/necusjz}{github.com/necusjz}
+  $\ \diamond\ $
+  \href{https://www.linkedin.com/in/necusjz}{linkedin.com/in/necusjz}
+\end{center}
+
+%--------------------------PROFESSIONAL EXPERIENCE--------------------------
+\section{Professional Experience}
+\cvheadingstart
+  \cvheading
+    {Microsoft Asia-Pacific Technology Co., Ltd.}{Shanghai, China}
+    {Software Engineer \cvroman{2}, Azure CLI}{09/2021 - Present}
+  \cvitemstart
+    \cvitem{Job description/Award/Achievement 1}
+    \cvitem{Job description/Award/Achievement 2}
+    \cvitem{Job description/Award/Achievement 3}
+    \cvitem{Job description/Award/Achievement 4}
+  \cvitemend
+
+  \cvheading
+    {SAP Labs}{Xi'an, China}
+    {Developer, SAP HANA}{06/2019 - 09/2021}
+  \cvitemstart
+    \cvitem{Deliver a large-scale software with short cycle time need a high degree of automation. In the delivery process of SAP HANA, crash triaging is considered as the most time-consuming task. Developers cannot quickly get the feedback for the quality of their code changes.}
+    \cvitem{In order to speed up the process of crash triaging and reduce human intervention. It needs to identify the duplicate part of crash failures automatically, so as to bind the existing solutions to the new crash failures.}
+    \cvitem{Leverage the calling sequence of stack frames in dump file and parse the source code of SAP HANA to construct abstract syntax tree using libclang. Besides, design a mathematical model to calculate crash similarity based on component information.}
+    \cvitem{Verify the crash similarity model by a dataset of 11,208 positive samples and negative samples, it performs 0.986 in AUC. Furthermore, apply it to the production environment and it can save 97\% human efforts in crash triaging as statistics.}
+  \cvitemend
+
+  \cvheading
+    {ThoughtWorks, Inc.}{Xi'an, China}
+    {Consultant, Security}{12/2018 - 06/2019}
+  \cvitemstart
+    \cvitem{When a confidential system exposed to the users. There will be information leakage due to intentional or unintentional operations from the users.}
+    \cvitem{Audit and restrict the user behavior on network communication, file system, serial device, USB device, etc., so as to guarantee the information security in a confidential system.}
+    \cvitem{Mainly responsible for the development of file system filter module based on inter-process communication. Implement a minifilter driver to audit file-related operations and restrict the high-risk ones among them.}
+    \cvitem{Achieve a kernel-level protection on file system. Monitor all file-related operations on the local computer, capture file data read by users and block operations for specific files.}
+  \cvitemend
+\cvheadingend
+
+%--------------------------EDUCATION--------------------------
+\section{Education}
+\cvheadingstart
+  \cvheading
+    {University of Science and Technology of China}{Hefei, China}
+    {Master of Software Engineering}{09/2016 - 11/2018}
+  \cvheading
+    {Xi'an University}{Xi'an, China}
+    {Bachelor of Automation}{09/2010 - 06/2014}
+\cvheadingend
+
+%--------------------------TECHNICAL SKILLS--------------------------
+\section{Technical Skills}
+\cvskill{Python, C++, Linux, Data Structures}{4}
+\cvskill{Kubernetes, Docker, Design Patterns}{3}
+\cvskill{MySQL, MongoDB, Flask, pandas}{3}
+\cvskill{Machine Learning, React, Material UI}{2}
+\vspace{-5pt}
+
+%--------------------------MISCELLANEOUS--------------------------
+\section{Misc.}
+\cvheadingstart
+\item
+\cvitemstart
+  \cvitem{IEEE Publication: \href{https://arxiv.org/abs/2205.15972}{\textit{K-Detector: Identifying Duplicate Crash Failures in Large-Scale Software Delivery}}, which is nominated as candidate to the \textbf{Best Industry Paper Award} in ISSRE 2020.}
+  \cvitem{U.S. Patent: \href{https://patents.google.com/patent/US20220108191A1}{\textit{Machine-Learned Model for Duplicate Crash Dump Detection}}}
+  \cvitem{Japanese-Language Proficiency Test - N2}
+\cvitemend
+\cvheadingend
+
+\end{document}
