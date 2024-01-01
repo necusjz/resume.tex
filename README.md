@@ -1,7 +1,8 @@
 # Ethan's Résumé Template
-Yet another resume template (in LaTeX) for software engineers.
+Yet another résumé template (in LaTeX) for software engineers.
 
-**ONLY** contains one single file to render an elegant layout, you can view or open it via Overleaf:
+**ONLY** contains a single file to render an elegant layout, you can [open or view it via Overleaf](https://www.overleaf.com/latex/templates/ethans-resume-template/kwmtbntyvhhr):
+
 ![](https://raw.githubusercontent.com/necusjz/p/master/resume.tex/00.png)
 
 ## Prerequisites
