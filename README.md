@@ -1,5 +1,5 @@
 # Ethan's Résumé Template
-Yet another résumé template (in LaTeX) for software engineers.
+Yet another résumé template for software engineers.
 
 **ONLY** contains a single file to render an elegant layout, you can [open or view it via Overleaf](https://www.overleaf.com/latex/templates/ethans-resume-template/kwmtbntyvhhr):
 
